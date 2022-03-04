@@ -1,0 +1,7 @@
+{
+  "name": "Pc_creator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,77 @@
+<ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button (click)="opemMenu()" fill="solid" color="primary">
+            Menu
+        </ion-button>
+    </ion-buttons>
+    <ion-title>Montagem</ion-title>
+</ion-toolbar>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-list>
+                    <ion-button expand="full" (click)="navProcessador()" routerdirection="forward">
+                        <h4>Processador</h4>
+                    </ion-button>
+                    <ion-button expand="full" (click)="navPlacaMae()" routerdirection="forward">
+                        <h4>Placa Mae</h4>
+                    </ion-button>
+                    <ion-button expand="full" (click)="navMemoriaRam()" routerdirection="forward">
+                        <h4>Memoria Ran</h4>
+                    </ion-button>
+                    <ion-button expand="full" (click)="navArmazenamento()" routerdirection="forward">
+                        <h4>HD /SSD</h4>
+                    </ion-button>
+                </ion-list>
+
+                
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>{{maquina.processadorId ? maquina.processadorId.modelo : ""}}</ion-label>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label>{{maquina.placaMaeId ? maquina.placaMaeId.modelo : ""}}</ion-label>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label>{{maquina.memoriaRamId ? maquina.memoriaRamId.modelo : ""}}</ion-label>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label>
+                                {{maquina.armazenamentoId ? maquina.armazenamentoId.modelo :
+                                ""}}{{maquina.armazenamentoId ? maquina.armazenamentoId.capacidade : ""}}
+                            </ion-label>
+                        </ion-item>
+
+
+                    </ion-list>
+                
+                <ion-item>
+                    <ion-button slot="start" (click)="salvar()">
+                        <ion-icon name="save-outline"></ion-icon> save
+                    </ion-button>
+                    <ion-input type="text" placeholder="Digite um nome para o pc" [(ngModel)]="maquina.descricao">
+                    </ion-input>
+                </ion-item>
+
+                <ion-item>
+                    NIVEL:
+                    <ion-row>
+                        <ion-col *ngFor="let star of stars">
+                            <ion-icon [name]="star"></ion-icon>
+                        </ion-col>
+                    </ion-row>
+
+                </ion-item>
+                <ion-item>
+                    <ion-label>Preço: {{maquina.precoMaquina}}</ion-label>
+                </ion-item>
+
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

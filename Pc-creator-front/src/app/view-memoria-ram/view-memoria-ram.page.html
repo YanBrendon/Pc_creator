@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="primary">
+      <h4> {{memoriaRam.modelo}}</h4>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label> {{memoriaRam.formato}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label> {{memoriaRam.capacidade}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>FABRICANTE: {{memoriaRam.fabricanteId.nome}}</ion-label>
+    </ion-item>
+    <ion-item>
+      NIVEL: 
+      <ion-row>
+          <ion-col *ngFor="let star of stars">
+              <ion-icon [name]="star"></ion-icon>
+          </ion-col>
+      </ion-row>
+  </ion-item>
+    <ion-item>
+      <ion-label> VALOR: {{memoriaRam.valorestimado}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

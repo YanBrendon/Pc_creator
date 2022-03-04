@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="montagem"></ion-back-button>
+    </ion-buttons>
+    <ion-title>lista de Memorias </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-searchbar  (ionInput)="buscar($event)"></ion-searchbar>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let memorias of memoriaFiltro">
+      <ion-item>
+        <ion-icon (click)="selecionar(memorias)" slot="start" name="arrow-undo-outline"></ion-icon>
+        <ion-label>{{memorias.modelo}}</ion-label>
+        <ion-button (click)="presentPopover(memorias.id)" fill="outline" slot="end">View</ion-button>
+      </ion-item>
+
+      <ion-card-content>
+        <ion-label>{{memorias.descricao}}</ion-label>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+
+</ion-content>

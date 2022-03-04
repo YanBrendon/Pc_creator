@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="primary">
+      <h4> {{placaMae.modelo}}</h4>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>CHIPSET : {{placaMae.chipset}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>SOQUETE : {{placaMae.soquete}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>FABRICANTE : {{placaMae.fabricanteId.nome}}</ion-label>
+    </ion-item>
+    <ion-item>
+      NIVEL: 
+      <ion-row>
+          <ion-col *ngFor="let star of stars">
+              <ion-icon [name]="star"></ion-icon>
+          </ion-col>
+      </ion-row>
+  </ion-item>
+    <ion-item>
+      <ion-label>VALOR : {{placaMae.valorestimado}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

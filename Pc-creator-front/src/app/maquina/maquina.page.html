@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Descrição</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>{{maquina.processadorId.modelo}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label> {{maquina.placaMaeId.modelo}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{maquina.memoriaRamId.modelo}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{maquina.armazenamentoId.modelo}}{{maquina.armazenamentoId.capacidade}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label> Preço: {{maquina.precomaquina}}</ion-label>
+    </ion-item>
+    <ion-item>
+      NIVEL:
+      <ion-row>
+          <ion-col *ngFor="let star of stars">
+              <ion-icon [name]="star"></ion-icon>
+          </ion-col>
+      </ion-row>
+      
+  </ion-item>
+  </ion-list>
+</ion-content>
+

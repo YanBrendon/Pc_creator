@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="montagem/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>lista de processadores</ion-title>
+  </ion-toolbar>
+  <ion-searchbar  (ionInput)="buscar($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let processadores of processFiltro">
+      <ion-item>
+        <ion-icon (click)="selecionar(processadores)" slot="start" name="arrow-undo-outline"></ion-icon>
+        <ion-label>{{processadores.modelo}}</ion-label>
+        <ion-button (click)="presentPopover(processadores.id)" fill="outline" slot="end">View</ion-button>
+      </ion-item>
+
+      <ion-card-content>
+        <ion-label>{{processadores.descricao}}</ion-label>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+
+</ion-content>

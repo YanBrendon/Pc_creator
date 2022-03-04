@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="montagem"></ion-back-button>
+    </ion-buttons>
+    <ion-title>lista de Armazenamentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-searchbar  (ionInput)="buscar($event)"></ion-searchbar>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let armaz of armazenamentoFiltro">
+      <ion-item>
+        <ion-icon (click)="selecionar(armaz)" slot="start" name="arrow-undo-outline"></ion-icon>
+        <ion-label>{{armaz.modelo}} {{armaz.capacidade }}</ion-label>
+        <ion-button (click)="presentPopover(armaz.id)" fill="outline" slot="end">View</ion-button>
+      </ion-item>
+
+      <ion-card-content>
+        <ion-label>{{armaz.descricao}}</ion-label>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+
+</ion-content>
