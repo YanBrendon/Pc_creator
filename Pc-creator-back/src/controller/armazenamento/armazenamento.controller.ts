@@ -7,7 +7,6 @@ import { ArmazenamentoService } from 'src/services/armazenamento/armazenamento.s
 @Controller('armazenamento')
 export class ArmazenamentoController {
 
-
     constructor(
         private armazenamentoProvider:ArmazenamentoProvider,
         private armazenamentoServices:ArmazenamentoService
@@ -15,6 +14,8 @@ export class ArmazenamentoController {
 
     @Get('getall')
     async getAll(): Promise<Resposta> {
+        console.log()
+
         try {
             const armazenamentos = await this.armazenamentoProvider.getAll()
             return {
